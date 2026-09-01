@@ -1,4 +1,13 @@
 {
-  "greeting": "Greetings from a third-party plugin",
-  "sayHello": "Say hello"
+  "plugin.name": "AI Semantic Search",
+  "plugin.description": "AI semantic search: reranks results by embedding similarity via the host embedding model",
+  "booster.name": "Semantic Reranker",
+  "booster.description": "Reranks engine-scored candidates by cosine similarity of embedding vectors",
+  "booster.weightLabel": "Semantic weight",
+  "booster.weightDesc": "Coefficient that converts semantic similarity into bonus score (default 50, roughly matching the standard matcher's base-score scale; no upper limit)",
+  "booster.modelIdLabel": "Embedding model",
+  "booster.modelIdDesc": "An embedding model configured in the host (Settings → Models); switching models invalidates the cache since vector spaces differ",
+  "booster.listModelsLabel": "Fetch host embedding models",
+  "booster.listModelsDesc": "Fetches the host's embedding model list to populate the dropdown above",
+  "booster.semanticScore": "Semantic similarity"
 }

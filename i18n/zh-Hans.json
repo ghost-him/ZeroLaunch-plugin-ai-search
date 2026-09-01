@@ -1,4 +1,13 @@
 {
-  "greeting": "来自第三方插件的问候",
-  "sayHello": "打招呼"
+  "plugin.name": "AI 语义搜索",
+  "plugin.description": "AI 语义搜索：调用宿主 embedding 模型对搜索结果做语义相似度重排",
+  "booster.name": "语义重排器",
+  "booster.description": "对引擎评分结果按嵌入向量余弦相似度做语义排序增强",
+  "booster.weightLabel": "语义权重",
+  "booster.weightDesc": "语义相似度折算为附加分的系数（默认 50，语义分接近标准匹配基础分量级；无上限）",
+  "booster.modelIdLabel": "嵌入模型",
+  "booster.modelIdDesc": "宿主已配置的 embedding 模型（在设置 → 模型 中配置；不同模型的向量空间不同，切换后缓存自动失效）",
+  "booster.listModelsLabel": "获取宿主嵌入模型列表",
+  "booster.listModelsDesc": "拉取宿主已配置的 embedding 模型清单，供上方下拉选择",
+  "booster.semanticScore": "语义相似度"
 }
