@@ -4,7 +4,6 @@ name = "AI 语义搜索"
 version = "0.1.0"
 description = "AI 语义搜索：宿主 embedding 模型对搜索结果做语义相似度重排"
 author = "ghost-him"
- minHostVersion = "0.1.0"
 
 [runtime]
 command = "bin/zerolaunch-plugin-ai-search.exe"

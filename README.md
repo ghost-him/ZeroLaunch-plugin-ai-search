@@ -42,6 +42,6 @@ python package.py          # 等价于 cargo build --release 后打包（无 Pyt
 python package.py --no-build   # 复用现有产物直接打包
 ```
 
-生成 `<plugin-id>-<version>.zip`：`manifest.toml` 必须位于 zip 根，`extra/` 目录内容并入 zip 根（与 exe 同目录的运行时文件放这里）。
+生成 `zerolaunch-plugin-ai-search-v<版本号>.zip`（插件短id = manifest `[plugin].id` 末段，如 `com.ghost-him.ai-search` → `ai-search`）：`manifest.toml` 必须位于 zip 根，`extra/` 目录内容并入 zip 根（与 exe 同目录的运行时文件放这里）。
 
 安装：设置 → 插件管理 → 安装本地插件，选择 zip；或手动解压到 `%USERPROFILE%/.ZeroLaunch-rs/plugins/<plugin-id>/` 后重新加载。
