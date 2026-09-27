@@ -4,6 +4,15 @@ name = "AI 语义搜索"
 version = "0.1.0"
 description = "AI 语义搜索：宿主 embedding 模型对搜索结果做语义相似度重排"
 author = "ghost-him"
+# 插件形态：inline = 触发词路由（行内）；panel = 候选项/热键唤醒（接管搜索窗口）
+mode = "inline"
+# 全局唤醒快捷键（仅 panel 形态注册，如 "Ctrl+E"）
+# hotkey = "Ctrl+E"
+# 触发关键词：inline 形态下即路由触发词，panel 形态下作为默认候选项的匹配关键字
+# 本插件只挂语义重排组件、不参与触发词路由，故为空
+triggerKeywords = []
+supportedOs = ["windows"]
+priority = 100
 
 [runtime]
 command = "bin/zerolaunch-plugin-ai-search.exe"
@@ -14,3 +23,7 @@ maxRestart = 3
 
 [components]
 provides = ["plugin", "score_booster"]
+
+[icon]
+# 插件图标（相对插件目录；随包分发，Release 一同上传同名附件供市场卡片展示）
+path = "icon.svg"

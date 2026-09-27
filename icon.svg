@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="AI 语义搜索">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6D5BF6"/>
+      <stop offset="1" stop-color="#A855F7"/>
+    </linearGradient>
+  </defs>
+  <rect x="3" y="3" width="58" height="58" rx="15" fill="url(#bg)"/>
+  <circle cx="27.5" cy="27.5" r="12.5" fill="none" stroke="#FFFFFF" stroke-width="5.5"/>
+  <path d="M37 37l9.5 9.5" stroke="#FFFFFF" stroke-width="6.5" stroke-linecap="round"/>
+  <path d="M27.5 19.5l2.5 5.5 5.5 2.5-5.5 2.5-2.5 5.5-2.5-5.5-5.5-2.5 5.5-2.5z" fill="#FDE68A"/>
+</svg>
