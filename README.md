@@ -7,7 +7,7 @@ ZeroLaunch 第三方插件：宿主 embedding 模型对搜索结果做语义相�
 ## 目录结构
 
 ```
-├── Cargo.toml          # 依赖 zerolaunch-plugin-sdk-rust / plugin-api（0.2）
+├── Cargo.toml          # 依赖 zerolaunch-plugin-sdk-rust / plugin-api（0.2.1）
 ├── manifest.toml       # 插件清单（[plugin] 元数据、运行时命令、能力与图标），打包时位于 zip 根
 ├── icon.svg            # 插件图标（清单 [icon] 声明，随包分发并作为 Release 附件供市场卡片展示）
 ├── package.py          # 打包脚本（cargo build --release + 生成安装 zip）
@@ -47,7 +47,7 @@ ZeroLaunch 第三方插件：宿主 embedding 模型对搜索结果做语义相�
 | manifest 键名 | 宿主 schema 用 camelCase（`panelEntry` / `settingsEntry` / `resultItemEntry`）。写成 snake_case **不报错但被静默忽略**；`package.py` 对这三个键做了预检告警。 |
 | 插件 id | 必须匹配 `[a-z][a-z0-9]*(\.[a-z][a-z0-9_-]*)+\z`（全小写反向域名），且与 `src/plugin.rs` 里构造的 id 一致。 |
 | 插件元数据 | 唯一声明处是 `manifest.toml` 的 `[plugin]` 段（必填 `id`/`name`/`version`/`description`/`author`/`mode`/`triggerKeywords`/`supportedOs`/`priority`，可选 `hotkey`），宿主读清单构造后不再向插件进程索取。 |
-| SDK 版本 | 依赖 `zerolaunch-plugin-* = "0.2"`：清单必填元数据与「插件级元数据只由清单声明」都是 0.2 起的契约，不要降级到 0.1（0.1 的 SDK 上报协议 1.0，会被宿主协议 2.0 闸门拒载）。 |
+| SDK 版本 | 依赖 `zerolaunch-plugin-* = "0.2.1"`：清单必填元数据与「插件级元数据只由清单声明」都是 0.2 起的契约，不要降级到 0.1（0.1 的 SDK 上报协议 1.0，会被宿主协议 2.0 闸门拒载）。 |
 | `t_key` 时机 | `t_key()` 依赖握手注入的插件 id；在 `run()` 之前构造元数据时调用**必须先 `zerolaunch_plugin_sdk_rust::init()`**——骨架 `main()` 已含，业务文件里无需再调。 |
 | 语言包结构 | 键与 `t_key` 路径一致、可带点号（`"booster.name"` ↔ `t_key("booster.name")`）；值只能是字符串或嵌套对象，出现数字/布尔会让宿主拒绝加载整包。 |
 | 面板样式 | 用宿主 CSS 变量（`--bg-primary`、`--text-primary` 等）即自动跟随宿主主题，不要写死颜色。 |
