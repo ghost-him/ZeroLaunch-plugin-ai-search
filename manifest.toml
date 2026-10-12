@@ -1,7 +1,7 @@
 [plugin]
 id = "com.ghost-him.ai-search"
 name = "AI 语义搜索"
-version = "0.1.1"
+version = "0.1.2"
 description = "AI 语义搜索：宿主 embedding 模型对搜索结果做语义相似度重排"
 author = "ghost-him"
 # 插件形态：inline = 触发词路由（行内）；panel = 候选项/热键唤醒（接管搜索窗口）
