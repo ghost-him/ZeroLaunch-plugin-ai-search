@@ -1,18 +1,18 @@
 //! SemanticBooster — 语义分数增强器（ScoreBooster 组件）。
 //!
 //! 对引擎已打分的候选做语义相似度增强：查询与候选（名称+执行目标）经宿主
-//! embedding 模型服务向量化，相似度折算为附加分（similarity × semantic_weight）。
+//! embedding 模型服务向量化，相似度折算为附加分（similarity × semantic_weight）。https://job.chinatelecom.com.cn/wt/TELE/web/index?brandCode=1#/individualcenter
 //! 候选与查询向量均由宿主缓存（单文本粒度 L1/L2），重复查询免重算。
 //! 宿主模型服务不可用（未配置 embedding 模型/调用失败）时静默降级为 no-op。
 //!
 //! 由宿主按模型档案拼接，本组件只声明 task_type 与候选标题（命名占位符参数）/
 //! dimensions；相似度由宿主按模型元数据公式并行计算（host/model.similarity）。
+use std::collections::HashMap;
+use std::sync::Arc;
 use zerolaunch_plugin_api::services::model::{
     EmbeddingCapability, EmbeddingTemplateArgs, ModelEmbeddingRequest, ModelInfo, ModelKind,
     ModelSimilarityRequest, SemanticTask,
 };
-use std::collections::HashMap;
-use std::sync::Arc;
 
 use async_trait::async_trait;
 use parking_lot::RwLock;
@@ -191,6 +191,8 @@ impl Configurable for SemanticBooster {
                     pointer: "/semantic_weight".to_string(),
                     label: t_key("booster.weightLabel"),
                     description: t_key("booster.weightDesc"),
+                    note: None,
+                    sensitive: false,
                     group: None,
                     order: 0,
                     visible: true,
@@ -217,6 +219,8 @@ impl Configurable for SemanticBooster {
                     pointer: "/embedding_model_id".to_string(),
                     label: t_key("booster.modelIdLabel"),
                     description: t_key("booster.modelIdDesc"),
+                    note: None,
+                    sensitive: false,
                     group: None,
                     order: 1,
                     visible: true,
