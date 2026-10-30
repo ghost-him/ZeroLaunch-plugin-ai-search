@@ -201,6 +201,7 @@ impl Configurable for SemanticBooster {
                     widget: None,
                     action: None,
                     detail_action: None,
+                    drop: None,
                 },
             },
             SettingDefinition {
@@ -239,6 +240,7 @@ impl Configurable for SemanticBooster {
                         field_mapping: Vec::new(),
                     })),
                     detail_action: None,
+                    drop: None,
                 },
             },
         ]
